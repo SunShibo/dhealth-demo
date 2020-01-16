@@ -1,0 +1,17 @@
+
+rsquid:S1488<"\Immediately return this expression instead of assigning it to the temporary variable "var7".(¯Ş—
+Fsquid:S20933"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+jsquid:S2095"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Ş›”Êùÿÿÿÿ
+squid:S1157p"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(²§ÄŒøÿÿÿÿ
+Ysquid:UselessImportCheck")Remove this unused import 'java.net.URL'.(ñìÁ„üÿÿÿÿ8™±Ç•ú-
+ssquid:S1488["\Immediately return this expression instead of assigning it to the temporary variable "in2b".(ö®Õ˜
+@squid:S1148ˆ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+ysquid:S1157r"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(ùñŠn
+bsquid:UselessImportCheck"7Remove this unused import 'java.net.HttpURLConnection'.(¬¬˜­8™±Ç•ú-
+?squid:S1148D"#Use a logger to log this exception.(´Ë¶âıÿÿÿÿ
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(‡ÛŸÚıÿÿÿÿ
+zsquid:S1157t"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(â§€
+bsquid:CommentedOutCodeLinel"<This block of commented-out lines of code should be removed.(‹ÖìÎ
+squid:S1157n"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(´×Âœüÿÿÿÿ
+]squid:S1126w"AReplace this if-then-else statement by a single return statement.(Í†ç¸üÿÿÿÿ
+isquid:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(š¬Ì£ûÿÿÿÿ

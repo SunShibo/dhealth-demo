@@ -1,0 +1,5 @@
+
+asquid:UselessImportCheck
+"6Remove this unused import 'javax.annotation.Resource'.(î¾Ì—8§äï™ú-
+U
+squid:S106"9Replace this use of System.out or System.err by a logger.(®¦œ#8Á‚×¿ú-

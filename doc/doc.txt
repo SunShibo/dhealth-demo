@@ -1,0 +1,4 @@
+1.请更换 oss & 百度ai开放平台 & 京东开放平台  秘钥 ，测试环境不稳定随时可能被停止（代码中已用 FIXME 标注 ）
+2.京东Maven依赖，需要上传至maven仓库，com文件夹下。
+3.imgage-1.0.jar，需要配置环境变量或制作成依赖引入(在resource/lib)。
+4.由于京东和OSS都自引入了org.apache.httpcomponents ，依赖，使用时会出现冲突，所以将OSS引入的HTTP请求单独提取出来，在引入。

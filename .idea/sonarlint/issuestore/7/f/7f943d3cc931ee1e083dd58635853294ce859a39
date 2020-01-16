@@ -1,0 +1,18 @@
+
+?squid:S2111@"!Use "BigDecimal.valueOf" instead.(ıúÜ“8É¹£Àú-
+Tsquid:S00107V"<Method has 8 parameters, which is greater than 7 authorized.(°ùø­
+^squid:S2184I"BCast one of the operands of this division operation to a "double".(“×Êøÿÿÿÿ
+Ysquid:S00107r"<Method has 8 parameters, which is greater than 7 authorized.(ÑÁ¸Èøÿÿÿÿ
+asquid:S2184"ECast one of the operands of this subtraction operation to a "double".(ğÈƒşÿÿÿÿ
+lsquid:S00100‹"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒèÙßøÿÿÿÿ
+asquid:S2184"ECast one of the operands of this subtraction operation to a "double".(ğÈƒşÿÿÿÿ
+osquid:S00117‹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒèÙßøÿÿÿÿ
+psquid:S1488@"YImmediately return this expression instead of assigning it to the temporary variable "y".(ıúÜ“
+tsquid:S1488""]Immediately return this expression instead of assigning it to the temporary variable "theta".(¡ˆš
+=squid:S2111-"!Use "BigDecimal.valueOf" instead.(î‘ĞÂşÿÿÿÿ
+9squid:S2111ª"!Use "BigDecimal.valueOf" instead.(Ãò«†
+\squid:S2184I"@Cast one of the operands of this integer division to a "double".(“×Êøÿÿÿÿ
+Nsquid:S2589ƒ"7Remove this expression which always evaluates to "true"(¬õ
+ƒsquid:S1488Œ"_Immediately return this expression instead of assigning it to the temporary variable "sigmoid".(¦’“İşÿÿÿÿ8…ÛÒ™ú-
+Bsquid:S1481."&Remove this unused "t" local variable.(Âˆ×ãıÿÿÿÿ
+Xsquid:S1118	":Add a private constructor to hide the implicit public one.(Ô“é¯8…¾€Åú-

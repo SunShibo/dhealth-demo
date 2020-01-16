@@ -1,0 +1,17 @@
+
+asquid:S3027="JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(‚„À
+?squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+isquid:S2095;"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(Ê’ƒÕÿÿÿÿÿ
+4squid:S2119>"Save and re-use this "Random".(¼İÅf
+fsquid:S3027y"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(”Ø—–ùÿÿÿÿ
+fsquid:S3027L"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(åèÎùÿÿÿÿ
+csquid:S00112I"FDefine and throw a dedicated exception instead of using a generic one.(•û…öúÿÿÿÿ
+O
+squid:S106`"9Replace this use of System.out or System.err by a logger.(ÓÒö¼
+csquid:S00112U"FDefine and throw a dedicated exception instead of using a generic one.(»Ù Äúÿÿÿÿ
+@squid:S1148†"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+csquid:S00112C"FDefine and throw a dedicated exception instead of using a generic one.(»Ù Äúÿÿÿÿ
+4squid:S2119M"Save and re-use this "Random".(¼İÅf
+csquid:S00112G"FDefine and throw a dedicated exception instead of using a generic one.(Òôæ«úÿÿÿÿ
+bsquid:S1134"DTake the required action to fix the issue indicated by this comment.(ûá¹•8ÿµâ™ú-
+csquid:S001127"FDefine and throw a dedicated exception instead of using a generic one.(«œÈùÿÿÿÿ

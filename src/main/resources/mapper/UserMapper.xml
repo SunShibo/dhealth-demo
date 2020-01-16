@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 【用户】 -->
+<mapper namespace="com.boe.dhealth.dao.UserDao">
+
+    <select id="getAssess" resultType="com.boe.dhealth.domain.AssessmentResultBO">
+        select  *  from user_image WHERE ut = #{ut} ORDER BY id DESC limit 1
+    </select>
+
+    <insert id="addAssess" parameterType="com.boe.dhealth.domain.AssessmentResultBO">
+        INSERT INTO `user_image` (
+	      `ut`,`old`,`analysis`,`body_image`,`head_image`,`chest_image`,`leg_image`,`pelvis_image`,`spine_image`,
+	      `old_oss`,`out_oss`,`body_image_oss`,`head_image_oss`,`chest_image_oss`,`leg_image_oss`,`pelvis_image_oss`,`spine_image_oss`,
+	      `headHeel_L`,`headHeel_R`,`highLowShoulder_L`,`highLowShoulder_R`,`pelvicTilt_L`,`pelvicTilt_R`,`scoliosis_L`,`scoliosis_R`,
+	      `o_leftleg_r`,`o_rightleg_r`,`x_leftleg_r`,`x_rightleg_r`,
+	      `l_shoulder_image_oss`,`r_shoulder_image_oss`,`l_pelvis_image_oss`,`r_pelvis_image_oss`,`create_time`,
+	      `headHeel_L_status`,`headHeel_R_status`,`highLowShoulder_L_status`,`highLowShoulder_R_status`,
+	`pelvicTilt_L_status`,`pelvicTilt_R_status`,`scoliosis_L_status`,`scoliosis_R_status`,
+	`o_leftleg_r_status`,`o_rightleg_r_status`,`x_leftleg_r_status`,`x_rightleg_r_status`)
+        VALUES(#{ut},#{old},#{analysis},#{bodyImage},#{headImage},#{chestImage},#{legImage},#{pelvisImage},#{spineImage},
+              #{oldOss},#{outOss},#{bodyImageOss},#{headImageOss},#{chestImageOss},#{legImageOss},#{pelvisImageOss},#{spineImageOss},
+              #{headHeelL},#{headHeelR},#{highLowShoulderL},#{highLowShoulderR},#{pelvicTiltL},#{pelvicTiltR},#{scoliosisL},#{scoliosisR},
+              #{oLeftlegR},#{oRightlegR},#{xLeftlegR},#{xRightlegR},
+              #{lShoulderImageOss},#{rShoulderImageOss},#{lPelvisImageOss},#{rPelvisImageOss},NOW(),
+              #{headHeelLStatus},#{headHeelRStatus},#{highLowShoulderLStatus},#{highLowShoulderRStatus},
+              #{pelvicTiltLStatus},#{pelvicTiltRStatus},#{scoliosisLStatus},#{scoliosisRStatus},
+              #{oLeftlegRStatus},#{oRightlegRStatus},#{xLeftlegRStatus},#{xRightlegRStatus})
+    </insert>
+
+    <update id="updateAssess" parameterType="com.boe.dhealth.domain.AssessmentResultBO">
+        update `user_image`
+        <set>
+            <if test="headImageSideOss!=null and headImageSideOss!=''">`head_image_side_oss`=#{headImageSideOss},</if>
+            <if test="legImageSideOss!=null and legImageSideOss!=''">`leg_image_side_oss`=#{legImageSideOss},</if>
+            <if test="humImageSideOss!=null and humImageSideOss!=''">`hum_image_side_oss`=#{humImageSideOss},</if>
+
+            <if test="headForwardR!=null and headForwardR!=''">`head_forward_r`=#{headForwardR},</if>
+            <if test="kneeHyperextensionR!=null and kneeHyperextensionR!=''">`knee_hyperextension_r`=#{kneeHyperextensionR},</if>
+            <if test="humpbackR!=null and humpbackR!=''">`humpback_r`=#{humpbackR},</if>
+
+
+            <if test="headForwardStatus!=null and headForwardStatus!=''">`head_forward_status`=#{headForwardStatus},</if>
+            <if test="kneeHyperextensionStatus!=null and kneeHyperextensionStatus!=''">`knee_hyperextension_status`=#{kneeHyperextensionStatus},</if>
+            <if test="humpbackStatus!=null and humpbackStatus!=''">`humpback_status`=#{humpbackStatus}</if>
+        </set>
+        order by `id` desc limit 1
+    </update>
+
+
+</mapper>
