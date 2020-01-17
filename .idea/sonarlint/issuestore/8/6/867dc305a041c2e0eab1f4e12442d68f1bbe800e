@@ -1,6 +1,0 @@
-
-Fsquid:S1148H"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8Ý‚×¿ú-
-Fsquid:S1148."#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8››¢–ú-
-nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(»¥„èÿÿÿÿÿ8ö°¦“ú-
-Fsquid:S1148F"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8Ý‚×¿ú-
-bsquid:S2147G"DCombine this catch with the one at line 69, which has the same body.(”ý¾8Ý‚×¿ú-

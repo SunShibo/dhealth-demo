@@ -1,35 +1,0 @@
-
-Ysquid:S00107"<Method has 9 parameters, which is greater than 7 authorized.(’ ›ªıÿÿÿÿ
-8squid:S21117"!Use "BigDecimal.valueOf" instead.(êéëº
-nsquid:S00117f"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é¬ßÂÿÿÿÿÿ
-nsquid:S00117g"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ášèçüÿÿÿÿ
-vsquid:S00117ª"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ†şÿÿÿÿ8ƒÍøÁú-
-ksquid:S00100E"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éÒ¥Çıÿÿÿÿ
-Ysquid:S00107p"<Method has 9 parameters, which is greater than 7 authorized.(¸•ü‡şÿÿÿÿ
-nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ ›ªıÿÿÿÿ
-nsquid:S00117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Å««»ıÿÿÿÿ
-nsquid:S00117E"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éÒ¥Çıÿÿÿÿ
-isquid:S00117i"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ˆ¯í
-ksquid:S001001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÕÓ¸ûÿÿÿÿ
-osquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êˆêåøÿÿÿÿ
-Xsquid:S1118":Add a private constructor to hide the implicit public one.(êºÑ–8Ù¢šú-
->squid:S2111‹"!Use "BigDecimal.valueOf" instead.(Œ³³ûÿÿÿÿ
-nsquid:S00117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıŠêêøÿÿÿÿ
-nsquid:S00117p"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸•ü‡şÿÿÿÿ
-osquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êˆêåøÿÿÿÿ
-osquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êˆêåøÿÿÿÿ
-=squid:S2111 "!Use "BigDecimal.valueOf" instead.(¼Ã¿úÿÿÿÿ
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ããª‡ùÿÿÿÿ
-nsquid:S00117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦«ôãüÿÿÿÿ
-Ysquid:S001071"<Method has 9 parameters, which is greater than 7 authorized.(ÛÕÓ¸ûÿÿÿÿ
-ksquid:S00100f"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é¬ßÂÿÿÿÿÿ
-=squid:S2111Y"!Use "BigDecimal.valueOf" instead.(¬Ù®Äıÿÿÿÿ
-Esquid:S2111ª"!Use "BigDecimal.valueOf" instead.(Œ†şÿÿÿÿ8¡èøÁú-
-nsquid:S00117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ½×¾üÿÿÿÿ
-gsquid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(Òœåûÿÿÿÿ
-nsquid:S001171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÕÓ¸ûÿÿÿÿ
-=squid:S2111H"!Use "BigDecimal.valueOf" instead.(Å««»ıÿÿÿÿ
-ksquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ ›ªıÿÿÿÿ
-8squid:S2111i"!Use "BigDecimal.valueOf" instead.(‘ˆ¯í
-5squid:S2119 "Save and re-use this "Random".(¼İÅf
-nsquid:S00117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬Ù®Äıÿÿÿÿ

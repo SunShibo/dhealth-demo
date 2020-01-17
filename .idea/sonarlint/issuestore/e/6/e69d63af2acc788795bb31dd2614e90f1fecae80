@@ -1,20 +1,0 @@
-
-Csquid:S3457j"%String contains no format specifiers.(…êòÇ8ÁúÃ–ú-
-?squid:S1643`"Use a StringBuilder instead.(¦í°—øÿÿÿÿ8ÁúÃ–ú-
-Xsquid:S1118":Add a private constructor to hide the implicit public one.(¡¦Îß8ÙÃÙ–ú-
-bsquid:S1134"DTake the required action to fix the issue indicated by this comment.(œ‚ß8ğŠÅ–ú-
-O
-squid:S106="9Replace this use of System.out or System.err by a logger.(±¤ª¹
-usquid:S1488$"^Immediately return this expression instead of assigning it to the temporary variable "result".(ÏÚ×œ
-squid:S1488g"dImmediately return this expression instead of assigning it to the temporary variable "access_token".(ÜèË$8ÁúÃ–ú-
-osquid:S00117g"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÜèË$8ÁúÃ–ú-
-V
-squid:S106e"9Replace this use of System.out or System.err by a logger.(¬Ì‡†8ÁúÃ–ú-
-V
-squid:S106j"9Replace this use of System.out or System.err by a logger.(…êòÇ8ÁúÃ–ú-
-Wsquid:S2864X"4Iterate over the "entrySet" instead of the "keySet".(½Ö²’ûÿÿÿÿ8ÁúÃ–ú-
-V
-squid:S106k"9Replace this use of System.out or System.err by a logger.(Îã­Ã8ÁúÃ–ú-
-[
-squid:S106Y"9Replace this use of System.out or System.err by a logger.(Çü¹ûÿÿÿÿ8ÁúÃ–ú-
-hsquid:S001171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ˜É'

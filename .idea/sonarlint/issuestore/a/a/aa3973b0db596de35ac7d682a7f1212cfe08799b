@@ -1,18 +1,0 @@
-
-qsquid:S00116	"TRename this field "used_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â¥…þúÿÿÿÿ
-nsquid:S001174"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¼ùÙûÿÿÿÿ
-jsquid:S00116
-"RRename this field "det_num" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆàîÙ
-ksquid:S00116"SRename this field "det_info" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁâíÅ
-msquid:S00116"URename this field "request_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É¦Ó“
-nsquid:S00117<"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³®Øíûÿÿÿÿ
-nsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò¦„¾ýÿÿÿÿ
-isquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º…œÄ
-msquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ¨´ç8Úõç–ú-
-rsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò¦„¾ýÿÿÿÿ8Úõç–ú-
-rsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áåÊòýÿÿÿÿ8Úõç–ú-
-msquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º…œÄ8Úõç–ú-
-rsquid:S001000"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ï·†úÿÿÿÿ8Úõç–ú-
-rsquid:S001004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¼ùÙûÿÿÿÿ8Úõç–ú-
-rsquid:S001008"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìï‰ûÿÿÿÿ8Úõç–ú-
-rsquid:S00100<"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³®Øíûÿÿÿÿ8Úõç–ú-

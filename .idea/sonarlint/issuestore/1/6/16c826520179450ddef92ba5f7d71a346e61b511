@@ -1,9 +1,0 @@
-
-Vsquid:S1118":Add a private constructor to hide the implicit public one.(ôÖ®¬ùÿÿÿÿ
-vsquid:S1488®"^Immediately return this expression instead of assigning it to the temporary variable "xmlStr".(Ù„µª
-tsquid:S1488ª"\Immediately return this expression instead of assigning it to the temporary variable "json".(Õœ˜¯
-Bsquid:S00108Á")Either remove or fill this block of code.(”ı¾
-fsquid:S00100§"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ¡‘s
-vsquid:S2293¾"YReplace the type specification in this constructor call with the diamond operator ("<>").(„¢Áòÿÿÿÿÿ
-vsquid:S1192…"WUse already-defined constant 'LONG_DATE_PATTERN' instead of duplicating its value here.(¾øõå8à±¿™ú-
-gsquid:S00100˜"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“ÌÊ£

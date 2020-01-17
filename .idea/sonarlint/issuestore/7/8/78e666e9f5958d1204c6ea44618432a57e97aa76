@@ -1,49 +1,0 @@
-
-vsquid:S00117¼"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éÚœŞûÿÿÿÿ8®ù‰–ú-
-hsquid:S3027Š"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(¦ÂÙT8®ù‰–ú-
-isquid:S2147“"ECombine this catch with the one at line 269, which has the same body.(çø‰şÿÿÿÿ8®ù‰–ú-
-Gsquid:S1148Ç"#Use a logger to log this exception.(¼­ŒÅúÿÿÿÿ8®ù‰–ú-
-ssquid:S00100š"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´ã‚İøÿÿÿÿ8®ù‰–ú-
-lsquid:S2095Ñ"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(Á®‡Ü8®ù‰–ú-
-isquid:S1192m"KDefine a constant instead of duplicating this literal "imageURL: " 3 times.(È‰Í8®ù‰–ú-
-vsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦¹Ÿÿùÿÿÿÿ8®ù‰–ú-
-nsquid:S00100­"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸àñ8®ù‰–ú-
-Gsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¨í™–ú-
-isquid:S2147‘"ECombine this catch with the one at line 269, which has the same body.(¢Ù±Øøÿÿÿÿ8®ù‰–ú-
-Fsquid:S1148p"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8®ù‰–ú-
-Fsquid:S1148l"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8®ù‰–ú-
-qsquid:S00117Á"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º›Ÿƒ8®ù‰–ú-
-\
-squid:S106°"9Replace this use of System.out or System.err by a logger.(ãüÙ¹ıÿÿÿÿ8®ù‰–ú-
-Gsquid:S1148”"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¨í™–ú-
-qsquid:S00117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶¾¹¶8®ù‰–ú-
-asquid:S2184§"BCast one of the operands of this division operation to a "double".(”Ÿ¡³8®ù‰–ú-
-qsquid:S00117º"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÔõ—8®ù‰–ú-
-qsquid:S00117¾"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°©š½8®ù‰–ú-
-Gsquid:S1148’"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8®ù‰–ú-
-V
-squid:S106m"9Replace this use of System.out or System.err by a logger.(È‰Í8®ù‰–ú-
-[
-squid:S106q"9Replace this use of System.out or System.err by a logger.(áÏË€ùÿÿÿÿ8®ù‰–ú-
-fsquid:S2184¶"BCast one of the operands of this addition operation to a "double".(×‰èûÿÿÿÿ8®ù‰–ú-
-vsquid:S00117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İÉ³‹ıÿÿÿÿ8®ù‰–ú-
-nsquid:S00100í"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³Àó÷8®ù‰–ú-
-asquid:S2184§"BCast one of the operands of this division operation to a "double".(”Ÿ¡³8®ù‰–ú-
-Wsquid:S1197Õ"8Move the array designator from the variable to the type.(˜²Æ–8®ù‰–ú-
-qsquid:S00117À"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÁ‚8®ù‰–ú-
-Gsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¨í™–ú-
-Ssquid:S1143{"5Remove this return statement from this finally block.(¥¹ï8®ù‰–ú-
-dsquid:S2147"ECombine this catch with the one at line 269, which has the same body.(ï­£Ä8®ù‰–ú-
-\
-squid:S106ú"9Replace this use of System.out or System.err by a logger.(ööüŠúÿÿÿÿ8®ù‰–ú-
-nsquid:S2674Ó"JCheck the return value of the "read" call to see how many bytes were read.(¯¾Êÿÿÿÿÿ8®ù‰–ú-
-Fsquid:S1148y"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8®ù‰–ú-
-Msquid:S2093+"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8®ù‰–ú-
-Xsquid:S1191"5Use classes from the Java API instead of Sun classes.(ö¤•Ûúÿÿÿÿ8®ù‰–ú-
-[
-squid:S106z"9Replace this use of System.out or System.err by a logger.(İÁÈ¢ûÿÿÿÿ8®ù‰–ú-
-vsquid:S00117¸"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒğìóüÿÿÿÿ8Ú‚×¿ú-
-Gsquid:S1148á"#Use a logger to log this exception.(¼­ŒÅúÿÿÿÿ8®ù‰–ú-
-qsquid:S00117›"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ìçº®8Ú‚×¿ú-
-Xsquid:S1118 ":Add a private constructor to hide the implicit public one.(Æë…8®ù‰–ú-
-Gsquid:S1148Ö"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8®ù‰–ú-
