@@ -44,7 +44,7 @@ public class OSSClientUtil {
      * 销毁
      */
     public void destory() {
-        ossClient.shutdown();
+     //   ossClient.shutdown();
     }
 
     /**

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Map;
 
 import com.alibaba.druid.util.StringUtils;
+import com.aliyun.oss.internal.OSSUtils;
 import com.boe.dhealth.domain.JsonResponse;
 import com.boe.dhealth.service.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,19 +54,19 @@ public class DhealthApi {
 
 	/**
 	 *  正面关键点
-	 * @param file  上传的图片
+	 * @param side  上传的图片
 	 * @return
 	 */
 	@PostMapping("/body/side")
-	public  JsonResponse side(MultipartFile file){
+	public  JsonResponse side(MultipartFile side){
 		// 入参验证
-		if(file==null){
+		if(side==null){
 			return  JsonResponse.fail("参数异常");
 		}
 
 		Map<String, Object> front=null;
 		try {
-			front = dhealthService.side(file);
+			front = dhealthService.side(side);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
@@ -73,5 +74,18 @@ public class DhealthApi {
 		}
 		return  new JsonResponse(front);
 	}
+
+    public static void main(String[] args) {
+        System.out.println("linux".toLowerCase().contains("linux"));
+    }
+
+    @PostMapping("/test/test")
+    public  JsonResponse test(MultipartFile side){
+
+
+        String front = System.getProperty("os.name").toLowerCase();
+        System.out.println(front);
+        return  new JsonResponse(front);
+    }
 
 }
