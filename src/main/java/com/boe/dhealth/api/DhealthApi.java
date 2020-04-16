@@ -12,6 +12,7 @@ import java.util.Set;
 
 import com.alibaba.druid.util.StringUtils;
 import com.boe.dhealth.domain.JsonResponse;
+import com.boe.dhealth.service.CalculateService;
 import com.boe.dhealth.service.util.FileUtil;
 import com.boe.dhealth.service.util.ImageUtil;
 import com.boe.dhealth.service.util.OSSClientUtil;
@@ -39,6 +40,26 @@ public class DhealthApi {
 	@Resource
 	private FastFileStorageClient fc;
 
+	@Resource
+	CalculateService calculateService;
+
+	@PostMapping("/body/point")
+	public  JsonResponse side_point(MultipartFile file) {
+		// 入参验证
+		if(file==null){
+			return  JsonResponse.fail("参数异常");
+		}
+
+		Map<String, Object> map=new HashMap<>();
+		try {
+			calculateService.getPoint(file,map);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return  new JsonResponse(map);
+
+	}
+
 	/**
 	 * 上传图片
 	 * @return
@@ -62,29 +83,6 @@ public class DhealthApi {
 		Map<String, Object> front=new HashMap<>();
 		front.put("path",analysis);
 		System.out.println("上传图片结束");
-		System.out.println("上传图片结束");
-		System.out.println("上传图片结束");
-
-
-		// ceshi=========元数据
-		Set<MetaData> metaDataSet = new HashSet<MetaData>();
-		metaDataSet.add(new MetaData("Author", "yimingge"));
-		metaDataSet.add(new MetaData("CreateDate", "2016-01-05"));
-
-
-		try {
-			StorePath uploadFile = null;
-
-			uploadFile = fc.uploadFile(file.getInputStream(), file.getSize(), getFileExtName(file.getOriginalFilename()), metaDataSet);
-			//打印地址
-			System.out.println(uploadFile.getPath());
-			System.out.println(uploadFile.getPath());
-			System.out.println(uploadFile.getPath());
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
 		return  new JsonResponse(front);
 	}

@@ -1,6 +1,8 @@
 package com.boe.dhealth.service.util;
 
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -36,7 +38,43 @@ public class FileUtil {
         fis.close();
         return sb.toString();
     }
+    public static byte[] readFileByBufferedImage(BufferedImage image) throws IOException {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        try {
+            ImageIO.write(image, "jpg", out);
+        } catch (IOException e) {
+            //log.error(e.getMessage());
+        }
+        return out.toByteArray();
 
+    }
+    public static byte[] readFileByFile(File file) throws IOException {
+        ByteArrayOutputStream bos = new ByteArrayOutputStream((int) file.length());
+        BufferedInputStream in = null;
+
+        try {
+            in = new BufferedInputStream(new FileInputStream(file));
+            short bufSize = 1024;
+            byte[] buffer = new byte[bufSize];
+            int len1;
+            while (-1 != (len1 = in.read(buffer, 0, bufSize))) {
+                bos.write(buffer, 0, len1);
+            }
+
+            byte[] var7 = bos.toByteArray();
+            return var7;
+        } finally {
+            try {
+                if (in != null) {
+                    in.close();
+                }
+            } catch (IOException var14) {
+                var14.printStackTrace();
+            }
+
+            bos.close();
+        }
+    }
     /**
      * 根据文件路径读取byte[] 数组
      */
