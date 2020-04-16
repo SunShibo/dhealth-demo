@@ -3,6 +3,7 @@ package com.boe.dhealth.domain;
 
 public class AssessmentResultBO  {
     private Integer id; //
+    private String name;
     private String ut; //用户标识
     private String old; //原图本地地址
     private String analysis; //解析图本地地址
@@ -58,6 +59,117 @@ public class AssessmentResultBO  {
     private String headForwardStatus;//头部前倾
     private String kneeHyperextensionStatus;//膝过伸
     private String humpbackStatus;//驼背
+
+    private String status;//状态
+    private String head;//头部
+    private String back;//背部
+    private String waist;//腰部
+    private String knee;//膝盖
+    private String photograph;//全身照
+    private String analyticalDiagram;//全身照解析图
+
+    private Double headForerake;//头前倾
+    private Double pelvisForerake;//盆骨前倾
+    private Double hunchback;//驼背
+    private Double knee1;//膝过申
+
+
+    public Double getHunchback() {
+        return hunchback;
+    }
+
+    public void setHunchback(Double hunchback) {
+        this.hunchback = hunchback;
+    }
+
+    public Double getKnee1() {
+        return knee1;
+    }
+
+    public void setKnee1(Double knee1) {
+        this.knee1 = knee1;
+    }
+
+    public Double getHeadForerake() {
+        return headForerake;
+    }
+
+    public void setHeadForerake(Double headForerake) {
+        this.headForerake = headForerake;
+    }
+
+    public void setPelvisForerake(Double pelvisForerake) {
+        this.pelvisForerake = pelvisForerake;
+    }
+
+
+    public Double getPelvisForerake() {
+        return pelvisForerake;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getHead() {
+        return head;
+    }
+
+    public void setHead(String head) {
+        this.head = head;
+    }
+
+    public String getBack() {
+        return back;
+    }
+
+    public void setBack(String back) {
+        this.back = back;
+    }
+
+    public String getWaist() {
+        return waist;
+    }
+
+    public void setWaist(String waist) {
+        this.waist = waist;
+    }
+
+    public String getKnee() {
+        return knee;
+    }
+
+    public void setKnee(String knee) {
+        this.knee = knee;
+    }
+
+    public String getPhotograph() {
+        return photograph;
+    }
+
+    public void setPhotograph(String photograph) {
+        this.photograph = photograph;
+    }
+
+
+    public String getAnalyticalDiagram() {
+        return analyticalDiagram;
+    }
+
+    public void setAnalyticalDiagram(String analyticalDiagram) {
+        this.analyticalDiagram = analyticalDiagram;
+    }
 
     public String getrShoulderImageOss() {
         return rShoulderImageOss;

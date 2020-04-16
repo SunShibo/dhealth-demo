@@ -12,6 +12,15 @@ public class ValueBO {
     private Integer headForward;//头部前倾
     private Integer kneeHyperextension;//盆骨前倾
     private Integer hunchback;//备用字段
+    private Integer knee;
+
+    public Integer getKnee() {
+        return knee;
+    }
+
+    public void setKnee(Integer knee) {
+        this.knee = knee;
+    }
 
     public Integer getId() {
         return id;

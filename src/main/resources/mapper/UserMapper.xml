@@ -15,18 +15,20 @@
 	      `old_oss`,`out_oss`,`body_image_oss`,`head_image_oss`,`chest_image_oss`,`leg_image_oss`,`pelvis_image_oss`,`spine_image_oss`,
 	      `headHeel_L`,`headHeel_R`,`highLowShoulder_L`,`highLowShoulder_R`,`pelvicTilt_L`,`pelvicTilt_R`,`scoliosis_L`,`scoliosis_R`,
 	      `o_leftleg_r`,`o_rightleg_r`,`x_leftleg_r`,`x_rightleg_r`,
-	      `l_shoulder_image_oss`,`r_shoulder_image_oss`,`l_pelvis_image_oss`,`r_pelvis_image_oss`,`create_time`,
+	      `l_shoulder_image_oss`,`r_shoulder_image_oss`,`l_pelvis_image_oss`,`r_pelvis_image_oss`,`create_time`,`name`,`status`,
 	      `headHeel_L_status`,`headHeel_R_status`,`highLowShoulder_L_status`,`highLowShoulder_R_status`,
 	`pelvicTilt_L_status`,`pelvicTilt_R_status`,`scoliosis_L_status`,`scoliosis_R_status`,
-	`o_leftleg_r_status`,`o_rightleg_r_status`,`x_leftleg_r_status`,`x_rightleg_r_status`)
+	`o_leftleg_r_status`,`o_rightleg_r_status`,`x_leftleg_r_status`,`x_rightleg_r_status`,
+	head,back,waist,knee,photograph,analytical_diagram,head_forerake,pelvis_forerake,hunchback,knee1)
         VALUES(#{ut},#{old},#{analysis},#{bodyImage},#{headImage},#{chestImage},#{legImage},#{pelvisImage},#{spineImage},
               #{oldOss},#{outOss},#{bodyImageOss},#{headImageOss},#{chestImageOss},#{legImageOss},#{pelvisImageOss},#{spineImageOss},
               #{headHeelL},#{headHeelR},#{highLowShoulderL},#{highLowShoulderR},#{pelvicTiltL},#{pelvicTiltR},#{scoliosisL},#{scoliosisR},
               #{oLeftlegR},#{oRightlegR},#{xLeftlegR},#{xRightlegR},
-              #{lShoulderImageOss},#{rShoulderImageOss},#{lPelvisImageOss},#{rPelvisImageOss},NOW(),
+              #{lShoulderImageOss},#{rShoulderImageOss},#{lPelvisImageOss},#{rPelvisImageOss},NOW(),#{name},#{status},
               #{headHeelLStatus},#{headHeelRStatus},#{highLowShoulderLStatus},#{highLowShoulderRStatus},
               #{pelvicTiltLStatus},#{pelvicTiltRStatus},#{scoliosisLStatus},#{scoliosisRStatus},
-              #{oLeftlegRStatus},#{oRightlegRStatus},#{xLeftlegRStatus},#{xRightlegRStatus})
+              #{oLeftlegRStatus},#{oRightlegRStatus},#{xLeftlegRStatus},#{xRightlegRStatus},
+              #{head},#{back},#{waist},#{knee},#{photograph},#{analyticalDiagram},#{headForerake},#{pelvisForerake},#{hunchback},#{knee1})
     </insert>
 
     <update id="updateAssess" parameterType="com.boe.dhealth.domain.AssessmentResultBO">
@@ -49,4 +51,11 @@
     </update>
 
 
+    <select id="getList" parameterType="java.lang.String" resultType="com.boe.dhealth.domain.AssessmentResultBO2">
+        SELECT id,ut,`name`,`status`,create_time  FROM `user_image` WHERE ut=#{code}
+    </select>
+
+    <select id="getInfo" parameterType="java.lang.Integer" resultType="com.boe.dhealth.domain.AssessmentResultBO">
+        SELECT * FROM `user_image` WHERE id=#{id}
+    </select>
 </mapper>

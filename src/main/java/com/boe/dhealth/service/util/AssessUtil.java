@@ -168,7 +168,13 @@ public class AssessUtil {
      */
     public static double hepOs(double c,int num){
         BigDecimal R = new BigDecimal(c).divide(new BigDecimal(num), 4, BigDecimal.ROUND_HALF_UP);
-        return R.multiply(new BigDecimal(100)).doubleValue();
+        double result=R.multiply(new BigDecimal(100)).doubleValue();
+        if(result>100){
+            result=100;
+        }else if(result<0){
+            result=0;
+        }
+        return result;
     }
 
 }

@@ -166,6 +166,44 @@ public class ImageUtil {
         return result;
     }
 
+    /**
+     * 创建 & 压缩图片
+     *
+     * @param file
+     * @param ratio
+     * @return
+     * @throws IOException
+     */
+    public static String getPCpicturePath(MultipartFile file, double ratio) throws IOException {
+
+        String imgurl = SystemConfigUtil.getPath() + new Date().getTime() + "_" + new Random().nextInt(1000) + ".jpg";
+        ImageUtil.RotateImg(file, imgurl);
+        Image img = ImageIO.read(new File(imgurl));      // 取文件流构造Image对象
+        int widthR = img.getWidth(null);    // 得到源图宽
+        int heightR = img.getHeight(null);
+        //压缩之后的宽高
+        int widthW = 0;
+        int heightW = 0;
+
+        if (ratio > 0) {
+            widthW = (int) (widthR / ratio);
+            heightW = (int) (heightR / ratio);
+        }
+
+        BufferedImage image = new BufferedImage(widthW, heightW, BufferedImage.TYPE_INT_RGB);
+        image.getGraphics().drawImage(img, 0, 0, widthW, heightW, null); // 绘制缩小后的图
+        String result = "";
+        String name = file.getOriginalFilename();
+        name = name.replace(".", ",");
+        String[] str = name.split(",");//获取文件后缀名
+        String fileName = new Date().getTime() + "_" + new Random().nextInt(1000) + "." + str[str.length - 1];
+
+        String filePath = SystemConfigUtil.getPath() + fileName;
+        ImageIO.write(image, str[str.length - 1], new File(filePath));
+        result = fileName;
+
+        return filePath;
+    }
 
     public static String reduceImg(String imgsrc) {
         String imgdist = SystemConfigUtil.getPath() + new Date().getTime() + "_" + new Random().nextInt(1000) + ".jpg";
