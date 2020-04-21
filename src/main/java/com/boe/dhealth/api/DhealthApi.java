@@ -69,6 +69,9 @@ public class DhealthApi {
 		System.out.println("开始上传图片");
 		System.out.println("开始上传图片");
 		System.out.println("开始上传图片");
+		if(file==null){
+			return  JsonResponse.fail("参数异常");
+		}
 		// 文件不能超过6M
 //		boolean file0Size = FileUtil.checkFileSize(file.getSize(),10,"M");
 //		if (!file0Size){
