@@ -1,35 +1,23 @@
 package com.boe.dhealth.api;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
 import com.alibaba.druid.util.StringUtils;
 import com.boe.dhealth.domain.JsonResponse;
 import com.boe.dhealth.service.CalculateService;
-import com.boe.dhealth.service.util.FileUtil;
+import com.boe.dhealth.service.DhealthService;
 import com.boe.dhealth.service.util.ImageUtil;
 import com.boe.dhealth.service.util.OSSClientUtil;
-import com.github.tobato.fastdfs.domain.fdfs.MetaData;
-import com.github.tobato.fastdfs.domain.fdfs.StorePath;
 import com.github.tobato.fastdfs.service.FastFileStorageClient;
-import net.coobird.thumbnailator.Thumbnails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-//import com.boe.common.sdk.dto.JsonResponse;
-import com.boe.dhealth.service.DhealthService;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
+
+//import com.boe.common.sdk.dto.JsonResponse;
 
 @RestController
 public class DhealthApi {
@@ -102,14 +90,14 @@ public class DhealthApi {
 	 * @return
 	 */
 	@PostMapping("/body/front")
-	public  JsonResponse front(String frontPath,String sidePath,String code,String name){
+	public  JsonResponse front(String frontPath,String sidePath,String code,String name,String userKey){
 		// 入参验证
 		System.err.println("开始评估code:"+code);
 		System.err.println("开始评估code:"+code);
 		System.err.println("开始评估code:"+code);
 		System.err.println("开始评估code:"+code);
 		System.err.println("开始评估code:"+code);
-		if(StringUtils.isEmpty(code)||code.length()<=3 || StringUtils.isEmpty(name)||StringUtils.isEmpty(frontPath)||StringUtils.isEmpty(sidePath)){
+		if( StringUtils.isEmpty(name)||StringUtils.isEmpty(frontPath)||StringUtils.isEmpty(sidePath)){
 			return  JsonResponse.fail("参数异常");
 		}
 
@@ -118,7 +106,7 @@ public class DhealthApi {
 			System.err.println(code);
 			System.err.println(code);
 			System.err.println(code);
-			dhealthService.front(frontPath,sidePath, code,name);
+			dhealthService.front(frontPath,sidePath, code,name,null,userKey);
 			//dhealthService.front("C:\\Users\\wy\\Desktop\\timg (2).jpg","C:\\Users\\wy\\Desktop\\timg.jpg", code,name);
 
 		} catch (Exception e) {
@@ -129,22 +117,37 @@ public class DhealthApi {
 	}
 
 	/**
+	 *  展会要的
+	 * @return
+	 */
+	@PostMapping("/body/body")
+	public  JsonResponse body(String code,MultipartFile file,String ut,String userKey){
+		// 入参验证
+		if(StringUtils.isEmpty(ut)||ut.length()<=3 || file==null){
+			return  JsonResponse.fail("参数异常");
+		}
+		Map<String, Object> front=new HashMap<>();
+		try {
+			System.err.println(code);
+			front=dhealthService.front(null,null, ut, null ,file,userKey);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return  JsonResponse.fail("图片不合法");
+		}
+		return  new JsonResponse(front);
+	}
+
+
+	/**
 	 *  评估记录
 	 * @param code 用户编码
 	 * @return
 	 */
 	@GetMapping("/body/list")
-	public  JsonResponse list(String code){
-		// 入参验证
-		System.err.println("评估记录:"+code);
-		System.err.println("评估记录:"+code);
-		System.err.println("评估记录:"+code);
-		System.err.println("评估记录:"+code);
-		System.err.println("评估记录:"+code);
-		if(StringUtils.isEmpty(code)||code.length()<=3){
-			return  JsonResponse.fail("参数异常");
-		}
-		return  new JsonResponse(dhealthService.getList(code));
+	public  JsonResponse list(String code,String userKey){
+		System.out.println("code:"+code);
+		System.out.println("userKey:"+userKey);
+		return  new JsonResponse(dhealthService.getList(code,userKey));
 	}
 
 	/**
@@ -187,17 +190,5 @@ public class DhealthApi {
 		return  new JsonResponse(front);
 	}
 
-    public static void main(String[] args) {
-        System.out.println("linux".toLowerCase().contains("linux"));
-    }
-
-    @PostMapping("/test/test")
-    public  JsonResponse test(MultipartFile side){
-
-
-        String front = System.getProperty("os.name").toLowerCase();
-        System.out.println(front);
-        return  new JsonResponse(front);
-    }
 
 }

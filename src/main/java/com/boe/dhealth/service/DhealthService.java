@@ -6,6 +6,7 @@ import com.boe.dhealth.service.util.*;
 import com.boe.dhealth.service.util.JsonUtils;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.http.entity.ContentType;
 import org.apache.commons.fileupload.FileItemFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,13 +44,20 @@ public class DhealthService {
      * @param code
      * @return
      */
-    public void front(String frontPath, String sidePath, String code, String name) throws Exception {
+    public Map<String,Object> front(String frontPath, String sidePath, String code, String name ,MultipartFile file1,String userKey) throws Exception {
         AssessmentResultBO assessmentResultBO = new AssessmentResultBO();
         String filePath = "";
+        Map<String, Object> map = new HashMap();
         try {
             //获取图片
             //MultipartFile file= getMultipartFile(frontPath);//本地图片转换为MultipartFile
-            MultipartFile file = createFileItem(frontPath, frontPath);//网络图片转换为MultipartFile
+            MultipartFile file;
+            if(!StringUtils.isEmpty(frontPath)){
+                file   = createFileItem(frontPath, frontPath);//网络图片转换为MultipartFile
+            }else {
+                file=file1;
+            }
+
 
             // 创建压缩图片
             filePath = ImageUtil.getPCpicture(file, 1);
@@ -320,7 +328,11 @@ public class DhealthService {
 
                     assessmentResultBO.setStatus("yes");
                     assessmentResultBO.setName(name);
-                    assessmentResultBO.setUt(code.substring(3));//截取第三位以后的字符串
+                    if(!StringUtils.isEmpty(userKey)){
+                        assessmentResultBO.setUt(userKey);
+                    }else {
+                        assessmentResultBO.setUt(code.substring(3));//截取第三位以后的字符串
+                    }
                     assessmentResultBO.setOld(SystemConfigUtil.getPath() + filePath);//原图
                     assessmentResultBO.setAnalysis(out);//解析图
                     assessmentResultBO.setBodyImage(body_image);
@@ -331,6 +343,7 @@ public class DhealthService {
                     assessmentResultBO.setSpineImage(spine_image);
                     assessmentResultBO.setOldOss(old_oss);
                     assessmentResultBO.setOutOss(out_oss);
+
                     assessmentResultBO.setBodyImageOss(body_image_oss);
                     assessmentResultBO.setHeadImageOss(head_image_oss);
                     assessmentResultBO.setChestImageOss(chest_image_oss);
@@ -353,6 +366,30 @@ public class DhealthService {
                     assessmentResultBO.setoRightlegR(o_rightleg_r.toString());//右腿O
                     assessmentResultBO.setxLeftlegR(x_leftleg_r.toString());
                     assessmentResultBO.setxRightlegR(x_rightleg_r.toString());
+
+                    map.put("out_oss", out_oss);
+                    map.put("body_image_oss", body_image_oss);
+                    map.put("head_image_oss", head_image_oss);//头部
+                    map.put("chest_image_oss", chest_image_oss);//胸部
+                    map.put("leg_image_oss", leg_image_oss);//腿部
+                    map.put("pelvis_image_oss", pelvis_image_oss);//盆骨
+                    map.put("spine_image_oss", spine_image_oss);//脊柱
+
+                    //------------评估
+                    map.put("headHeel_L", headHeel_L);//头部侧倾-左
+                    map.put("headHeel_R", headHeel_R);//头部侧倾-右
+                    map.put("highLowShoulder_L", highLowShoulder_L);//高低肩
+                    map.put("highLowShoulder_R", highLowShoulder_R);
+                    map.put("pelvicTilt_L", pelvicTiltR_L);//盆骨侧倾-左
+                    map.put("pelvicTilt_R", pelvicTiltR_R);
+                    map.put("scoliosis_L", scoliosisR_L);//脊柱侧弯-左
+                    map.put("scoliosis_R", scoliosisR_R);
+                    map.put("o_leftleg_r", o_leftleg_r);
+                    map.put("o_rightleg_r", o_rightleg_r);
+                    map.put("x_leftleg_r", x_leftleg_r);
+                    map.put("x_rightleg_r", x_rightleg_r);
+
+
                     //头部侧倾
                     if (section(headHeel_L)) {
                         assessmentResultBO.setHeadHeelLStatus("high");
@@ -419,14 +456,24 @@ public class DhealthService {
                     } else {
                         assessmentResultBO.setxRightlegRStatus("low");
                     }
+
                 }
+
                 //调用侧面评估方法
-                this.side(sidePath, assessmentResultBO);
+                if(!StringUtils.isEmpty(sidePath)) {
+                    this.side(sidePath, assessmentResultBO);
+                }
+
+
             }
         } catch (Exception e) {
             e.printStackTrace();
             assessmentResultBO.setName(name);
-            assessmentResultBO.setUt(code.substring(3));//截取第三位以后的字符串
+            if(!StringUtils.isEmpty(userKey)){
+                assessmentResultBO.setUt(userKey);
+            }else {
+                assessmentResultBO.setUt(code.substring(3));//截取第三位以后的字符串
+            }
             assessmentResultBO.setOld(SystemConfigUtil.getPath() + filePath);//原图
             assessmentResultBO.setBodyImage(frontPath);//正面照片
             assessmentResultBO.setPhotograph(sidePath);//侧面照
@@ -434,34 +481,10 @@ public class DhealthService {
         } finally {
             //添加信息
             userService.addAssess(assessmentResultBO);
+            return map;
         }
 
-//========
-//        Map<String, Object> map = new HashMap();
-//        map.put("old_oss", old_oss);
-//        map.put("out_oss", out_oss);
-//        map.put("body_image_oss", body_image_oss);
-//        map.put("head_image_oss", head_image_oss);//头部
-//        map.put("chest_image_oss", chest_image_oss);//胸部
-//        map.put("leg_image_oss", leg_image_oss);//腿部
-//        map.put("pelvis_image_oss", pelvis_image_oss);//盆骨
-//        map.put("spine_image_oss", spine_image_oss);//脊柱
-//
-//        //------------评估
-//        map.put("headHeel_L", headHeel_L);//头部侧倾-左
-//        map.put("headHeel_R", headHeel_R);//头部侧倾-右
-//        map.put("highLowShoulder_L", highLowShoulder_L);//高低肩
-//        map.put("highLowShoulder_R", highLowShoulder_R);
-//        map.put("pelvicTilt_L", pelvicTiltR_L);//盆骨侧倾-左
-//        map.put("pelvicTilt_R", pelvicTiltR_R);
-//        map.put("scoliosis_L", scoliosisR_L);//脊柱侧弯-左
-//        map.put("scoliosis_R", scoliosisR_R);
-//        map.put("o_leftleg_r", o_leftleg_r);
-//        map.put("o_rightleg_r", o_rightleg_r);
-//        map.put("x_leftleg_r", x_leftleg_r);
-//        map.put("x_rightleg_r", x_rightleg_r);
 
-//        return map;
     }
 
     /**
@@ -774,8 +797,8 @@ public class DhealthService {
      *
      * @return
      */
-    public List<AssessmentResultBO2> getList(String code) {
-        return userService.getList(code);
+    public List<AssessmentResultBO2> getList(String code,String userKey) {
+            return userService.getList(code,userKey);
     }
 
     /**
