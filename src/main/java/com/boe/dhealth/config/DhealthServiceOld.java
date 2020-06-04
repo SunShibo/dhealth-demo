@@ -104,7 +104,7 @@ public class DhealthServiceOld {
         //图片截取-骨盆右
         String r_pelvis_image = ImageUtil.cut(SystemConfigUtil.getPath() + filePath, left + 10, r_hipy - 40, r_hipx - left + (l_hipx - r_hipx) / 2 + 20, r_hipx - left + (l_hipx - r_hipx) / 2 + 20);
 
-        //TODO  上传至OSS 请更换OSS地址
+        //FIXME   上传至OSS 请更换OSS地址
         OSSClientUtil ossClientUtil = new OSSClientUtil();
         String body_image_oss = ossClientUtil.uploadImg2Oss(body_image);//全身
         String spine_image_oss = ossClientUtil.uploadImg2Oss(spine_image);//脊柱
@@ -615,7 +615,7 @@ public class DhealthServiceOld {
         CoordinateBO right_hip = body_parts.getRight_hip();//右髋部
         CoordinateBO right_knee = body_parts.getRight_knee(); //右膝
         CoordinateBO right_ankle = body_parts.getRight_ankle(); //右脚踝
-        CoordinateBO neck = body_parts.getNeck(); //颈部 //FIXME  新增代码
+        CoordinateBO neck = body_parts.getNeck(); //颈部 /
 
         g.drawString(".", (int) top_head.getX() + -12, (int) Math.ceil(top_head.getY()) + 10);  //头顶
         g.drawString(".", (int) right_ear.getX() + -12, (int) Math.ceil(right_ear.getY()) + 10);  //右耳
@@ -627,11 +627,11 @@ public class DhealthServiceOld {
         g.drawString(".", (int) right_hip.getX() + -12, (int) Math.ceil(right_hip.getY()) + 10);  //右髋部
         g.drawString(".", (int) right_knee.getX() + -12, (int) Math.ceil(right_knee.getY()) + 10);  //右膝
         g.drawString(".", (int) right_ankle.getX() + -12, (int) Math.ceil(right_ankle.getY()) + 10);  //右脚踝
-        g.drawString(".", (int) neck.getX() + -12, (int) Math.ceil(neck.getY()) + 10);  //颈部 //FIXME  新增代码
+        g.drawString(".", (int) neck.getX() + -12, (int) Math.ceil(neck.getY()) + 10);  //颈部 /
 
-        double left= right_shoulder.getX()- location.getLeft(); //FIXME  新增代码
-        left=right_shoulder.getX()-(left/2);//FIXME  新增代码
-        g.drawString(".", (int)left, (int) Math.ceil(right_shoulder.getY()) + 10);  //背部关键点//FIXME  新增代码
+        double left= right_shoulder.getX()- location.getLeft(); //
+        left=right_shoulder.getX()-(left/2);
+        g.drawString(".", (int)left, (int) Math.ceil(right_shoulder.getY()) + 10);  //背部关键点/
 
 
         //连接线
@@ -686,9 +686,9 @@ public class DhealthServiceOld {
         //盆骨
         String hip = ImageUtil.cut(SystemConfigUtil.getPath() + filePath, (int) location.getLeft() , (int) right_elbow.getY(), (int) (right_knee.getY() - right_elbow.getY()), (int) location.getWidth());
 
-        //截取背部 //FIXME  新增代码
+        //截取背部
         String back = ImageUtil.cut(SystemConfigUtil.getPath() + filePath, (int) location.getLeft(), (int) right_ear.getY(), (int) right_elbow.getY(), (int) location.getWidth());
-       //截取膝部//FIXME  新增代码
+       //截取膝部
         String knee = ImageUtil.cut(SystemConfigUtil.getPath() + filePath, (int) location.getLeft() , (int) right_hip.getY(), (int) (right_ankle.getY() - right_hip.getY()), (int) location.getWidth());
 
 
@@ -697,8 +697,8 @@ public class DhealthServiceOld {
         String analysis = oss.uploadImg2Oss(output);//解析图
         String aHead = oss.uploadImg2Oss(head);//头
         String aWaist = oss.uploadImg2Oss(hip);//腰部
-        String aBack = oss.uploadImg2Oss(back);//背部  //FIXME  新增代码
-        String aken = oss.uploadImg2Oss(knee);//膝部位 //FIXME  新增代码
+        String aBack = oss.uploadImg2Oss(back);//背部
+        String aken = oss.uploadImg2Oss(knee);//膝部位
 
 
 
@@ -707,7 +707,7 @@ public class DhealthServiceOld {
         resultMap.put("head", aHead);
         resultMap.put("back", aBack);
 
-        ValueBO value = valueService.getValue(); //FIXME  ValueBO实体类中新增 knee 字段手动加一下 生成get set
+        ValueBO value = valueService.getValue();
         double headForerake = AssessUtil.hepOs(k, value.getHeadForward());
         double pelvisForerake = AssessUtil.hepOs(k1, value.getKneeHyperextension());
         resultMap.put("headForerake",headForerake);
@@ -715,11 +715,11 @@ public class DhealthServiceOld {
 
 
         //驼背
-        double hunchback = AssessUtil.hepOs(k2, value.getHunchback()); //FIXME  新增代码
+        double hunchback = AssessUtil.hepOs(k2, value.getHunchback()); //
         //膝过申
-        double knee1 = AssessUtil.hepOs(k3, value.getKnee());//FIXME  新增代码
-        resultMap.put("k2",hunchback); //FIXME  新增代码
-        resultMap.put("k3",knee1);//FIXME  新增代码
+        double knee1 = AssessUtil.hepOs(k3, value.getKnee());
+        resultMap.put("k2",hunchback);
+        resultMap.put("k3",knee1);
 
         return resultMap;
     }

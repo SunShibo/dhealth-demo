@@ -17,7 +17,6 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
-//import com.boe.common.sdk.dto.JsonResponse;
 
 @RestController
 public class DhealthApi {
@@ -31,6 +30,11 @@ public class DhealthApi {
 	@Resource
 	CalculateService calculateService;
 
+	/**
+	 * 侧面关键点
+	 * @param file
+	 * @return
+	 */
 	@PostMapping("/body/point")
 	public  JsonResponse side_point(MultipartFile file) {
 		// 入参验证
@@ -55,8 +59,6 @@ public class DhealthApi {
 	@PostMapping("/body/upload")
 	public  JsonResponse upload(MultipartFile file) throws Exception {
 		System.out.println("开始上传图片");
-		System.out.println("开始上传图片");
-		System.out.println("开始上传图片");
 		if(file==null){
 			return  JsonResponse.fail("参数异常");
 		}
@@ -78,7 +80,6 @@ public class DhealthApi {
 		return  new JsonResponse(front);
 	}
 	private String getFileExtName(String name) {
-		// TODO Auto-generated method stub
 		return (name.substring(name.lastIndexOf(".")+1));
 	}
 	/**
@@ -93,15 +94,10 @@ public class DhealthApi {
 	public  JsonResponse front(String frontPath,String sidePath,String code,String name,String userKey){
 		// 入参验证
 		System.err.println("开始评估code:"+code);
-		System.err.println("开始评估code:"+code);
-		System.err.println("开始评估code:"+code);
-		System.err.println("开始评估code:"+code);
-		System.err.println("开始评估code:"+code);
 		if( StringUtils.isEmpty(name)||StringUtils.isEmpty(frontPath)||StringUtils.isEmpty(sidePath)){
 			return  JsonResponse.fail("参数异常");
 		}
 
-		//Map<String, Object> front=new HashMap<>();
 		try {
 			System.err.println(code);
 			System.err.println(code);
@@ -168,11 +164,11 @@ public class DhealthApi {
 
 
 
-	/**
+/*	*//**
 	 *  侧面关键点
 	 * @param side  上传的图片
 	 * @return
-	 */
+	 *//*
 	@PostMapping("/body/side")
 	public  JsonResponse side(MultipartFile side){
 		// 入参验证
@@ -188,7 +184,7 @@ public class DhealthApi {
 //			e.printStackTrace();
 //		}
 		return  new JsonResponse(front);
-	}
+	}*/
 
 
 }
