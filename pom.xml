@@ -125,7 +125,7 @@
 		<dependency><!--是由com.aliyun.oss pom 中剪切出来 -->
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-			<version>4.4.1</version>
+			<version>4.5.13</version>
 		</dependency>
 
 
